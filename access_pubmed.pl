@@ -15,7 +15,7 @@ unlink "abstracts.txt";
 $search_term = "breast cancer";
 
 #replace space with +
-# caution, no space is allowed right after =
+# caution!!! no space is allowed right after =
 $search_term =~ s/\s/+/g;
 
 #print $search_term;
@@ -40,6 +40,9 @@ $esearch_result = get($url);
 #print "$esearch_result";
 
 #extract paper IDs using match regex . anything * anytime, globally
+# -m is match command
+# match anything,at anytime between <Id> and </Id>,regardless of anything before <Id> and after </Id>
+# |g means do it globally
 @ids = ($esearch_result =~ m|.*<Id>(.*)</Id>.*|g);
 
 #print join(',',@ids);
