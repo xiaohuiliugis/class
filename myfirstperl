@@ -1,0 +1,4 @@
+#!
+$DNA='DAFDAFDAFASDF'
+print $DNA
+
